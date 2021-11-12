@@ -39,6 +39,8 @@ spring:
       adorsys-sandbox-url: http://localhost:20014
       adorsys-sandbox-oauth-server-url: http://localhost:20015/oauth/authorization-server
       adorsys-hbci-sandbox-url: http://localhost:8090/hbci-mock/
+      # Updates of current tables
+      existing-auth-session-nok-url: ${facade.urls.embedded-ui-base-url}/embedded-server/v1/consent/{authSessionId}/fromAspsp/{aspspRedirectCode}/nok
     # Which migrations types to apply (pre-load bank data into database)
     contexts: dev,mock-banks
 

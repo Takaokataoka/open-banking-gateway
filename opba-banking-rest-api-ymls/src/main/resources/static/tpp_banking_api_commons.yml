@@ -192,9 +192,13 @@ components:
         recognisable by FinTech.
         Since authorisation may be mandated by the bank at any time, this header to be included to all
         service requests, even if PsuConsentSession already exists.
+
+        **Important:** Encryption mechanisms will not be applied to this URL, so ensure it does not have any sensitive data.
+        This is due to the fact this URL must be used in exceptional cases (i.e. expired cookies) as well.
       required: true
       schema:
         type: string
+        maxLength: 1024
       example: "https://example.com/myservice/sf3-3r33-3535/failure"
 
     X-Create-Consent-If-None:

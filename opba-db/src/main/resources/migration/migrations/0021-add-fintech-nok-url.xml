@@ -1,0 +1,14 @@
+<databaseChangeLog logicalFilePath="db.changelog-1.0.xml" xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet author="vbeex@adorsys.com.ua" id="2021-11-12-12">
+        <comment>Added fintechNokUrl to Auth session</comment>
+        <addColumn tableName="${table-prefix}auth_session">
+            <column name="fintech_redirect_nok_url" type="VARCHAR(1024)">
+                <constraints nullable="false" deferrable="true"/>
+            </column>
+        </addColumn>
+        <addNotNullConstraint tableName="${table-prefix}auth_session" columnName="fintech_redirect_nok_url" defaultNullValue="${existing-auth-session-nok-url}"/>
+    </changeSet>
+</databaseChangeLog>

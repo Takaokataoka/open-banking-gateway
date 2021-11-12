@@ -85,6 +85,9 @@ public class AuthSession {
     private String lastRequestId;
     private String lastErrorRequestId;
 
+    @Column(nullable = false)
+    private String fintechRedirectNokUrl;
+
     @Version
     private int version;
 

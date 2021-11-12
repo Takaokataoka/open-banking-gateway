@@ -104,6 +104,7 @@ public class AuthSessionHandler {
                         .psuAnonymous(request.isAnonymousPsu())
                         .redirectCode(context.getFutureRedirectCode().toString())
                         .status(SessionStatus.PENDING)
+                        .fintechRedirectNokUrl(request.getFintechRedirectUrlNok())
                         .build()
         );
 
